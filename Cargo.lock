@@ -1106,14 +1106,19 @@ dependencies = [
 name = "restate-cloudflare-worker"
 version = "0.0.0"
 dependencies = [
+ "bytes",
+ "futures",
+ "getrandom 0.3.4",
  "http",
  "http-body-util",
  "rand",
  "reqwest",
  "restate-sdk",
+ "restate-sdk-shared-core",
  "serde",
  "serde_json",
  "thiserror 2.0.17",
+ "wasm-bindgen-futures",
  "worker",
  "worker-macros",
 ]

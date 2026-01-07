@@ -14,6 +14,9 @@ async fn fetch(req: HttpRequest, _env: Env, _ctx: Context) -> Result<http::Respo
         // .bind(RunExampleImpl(reqwest::Client::new()).serve())
         .build();
 
+    // Cloudflare Workers does not support true bidirectional streaming -
+    // it buffers the entire request body before passing it to the worker.
+    // Therefore, we must use RequestResponse mode.
     let response = endpoint.handle_with_options(
         req,
         HandleOptions {
