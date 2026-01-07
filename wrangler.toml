@@ -1,0 +1,11 @@
+name = "restate-cloudflare-worker"
+main = "build/index.js"
+compatibility_date = "2025-12-18"
+
+workers_dev = true
+
+[build]
+command = "cargo install -q worker-build@^0.7 && worker-build --release"
+
+[observability]
+enabled = true
