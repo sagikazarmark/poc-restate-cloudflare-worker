@@ -1,10 +1,5 @@
 [target.wasm32-unknown-unknown]
 linker = "lld"
 
-[env]
-# Use system clang instead of nix-wrapped clang for WASM builds
-CC_wasm32_unknown_unknown = "clang"
-AR_wasm32_unknown_unknown = "llvm-ar"
-
-# Disable hardening flags for WASM target
-CFLAGS_wasm32_unknown_unknown = "-O2"
+# CC_wasm32_unknown_unknown is set in devenv.nix to use unwrapped clang
+# for wasm32 cross-compilation (avoids nix cc-wrapper issues with ring crate)

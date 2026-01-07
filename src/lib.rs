@@ -1,5 +1,5 @@
 use http_body_util::BodyExt;
-use restate_sdk::prelude::Endpoint;
+use restate_sdk::prelude::{Endpoint, HandleOptions, ProtocolMode};
 use worker::*;
 
 mod examples;
@@ -14,7 +14,12 @@ async fn fetch(req: HttpRequest, _env: Env, _ctx: Context) -> Result<http::Respo
         // .bind(RunExampleImpl(reqwest::Client::new()).serve())
         .build();
 
-    let response = endpoint.handle(req);
+    let response = endpoint.handle_with_options(
+        req,
+        HandleOptions {
+            protocol_mode: ProtocolMode::RequestResponse,
+        },
+    );
 
     let (parts, body) = response.into_parts();
 

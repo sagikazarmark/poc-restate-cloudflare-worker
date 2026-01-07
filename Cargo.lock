@@ -1100,7 +1100,7 @@ dependencies = [
  "once_cell",
  "socket2",
  "tracing",
- "windows-sys 0.52.0",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1286,8 +1286,7 @@ dependencies = [
 [[package]]
 name = "restate-sdk"
 version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "85223caeb8e261893229c27a47d98ad95abf8365b725e6515e5cce2d976138d3"
+source = "git+https://github.com/sagikazarmark/restate-sdk-rust?branch=protocol-mode#200f33bb283b04ca67abf674caab95de3dfbc60d"
 dependencies = [
  "bytes",
  "futures",
@@ -1314,8 +1313,7 @@ dependencies = [
 [[package]]
 name = "restate-sdk-macros"
 version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96bd4f6bd3bbf00428590ef7290b413d9864217a0a65627fd9855a59296f77a6"
+source = "git+https://github.com/sagikazarmark/restate-sdk-rust?branch=protocol-mode#200f33bb283b04ca67abf674caab95de3dfbc60d"
 dependencies = [
  "proc-macro2",
  "quote",
